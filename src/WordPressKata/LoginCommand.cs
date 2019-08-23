@@ -37,9 +37,7 @@ namespace WordPressKata
                 rememberMeInput?.Click();
             }
 
-            var byButton = By.Id("wp-submit");
-            var loginButton = Browser.Instance.FindElement(byButton);
-            Browser.Wait(1000, byButton);
+            var loginButton = Browser.Instance.FindElement(By.Id("wp-submit"));
             loginButton.Click();
             // Wait for the login to occur
             Browser.Wait(by: By.CssSelector("div.wrap > h1"));
