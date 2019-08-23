@@ -8,7 +8,12 @@ namespace WordPressKata.Tests
     {
         public LoginShould()
         {
-            Browser.Open();    
+#if DEBUG
+            Browser.Open();
+#else
+            Browser.Open(BrowserType.PhantomJS);
+#endif
+
         }
 
         [Fact]
@@ -25,7 +30,7 @@ namespace WordPressKata.Tests
         }
 
         public void Dispose()
-        {
+        {            
             Browser.Quit();
         }
     }
