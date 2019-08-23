@@ -4,8 +4,13 @@ using FluentAssertions;
 
 namespace WordPressKata.Tests
 {
-    public class LoginShould
+    public class LoginShould : IDisposable
     {
+        public LoginShould()
+        {
+            Browser.Open();    
+        }
+
         [Fact]
         public void AllowAnAdminToLogin()
         {
@@ -17,6 +22,11 @@ namespace WordPressKata.Tests
                 .Login();
 
             DashboardPage.IsCurrentPage.Should().BeTrue();
+        }
+
+        public void Dispose()
+        {
+            Browser.Quit();
         }
     }
 }

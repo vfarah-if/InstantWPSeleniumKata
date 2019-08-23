@@ -52,6 +52,32 @@ This Kata is an exploration of ideas, trying to reduce the unintentional complex
 
 ## Test Strategy
 
-1. Start with your first simple test to generate the code
+1. Start with your first simple test to generate the basic code
+
+   ![](screen-shots/01-red-test.png)
+
+2. Generate the automation code to deal with the simplest functionality to make the test pass
+
+   ![02-generate-login-page](screen-shots/02-generate-login-page.png)
+
+3. Generate login command to persist the data assigned
+
+   ![03-login-command](screen-shots/03-login-command.png)
+
+4. Generate dashboard page and default state to make test pass
+
+   ![04-dashboard-page](screen-shots/04-dashboard-page.png)
+
+5. Generate a browser class for opening and quitting the browser and add support for all types of browser
+
+   ![05-browser-class](screen-shots/05-browser-class.png)
+
+6. Reference it in the test
+
+   ![06-open-and-quit-browser](screen-shots/06-open-and-quit-browser.png)
+
+7. Implement the actual login logic ...
+
+   
 
    
