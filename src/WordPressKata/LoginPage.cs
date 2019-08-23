@@ -1,17 +1,19 @@
 ﻿using System;
+using OpenQA.Selenium.Chrome;
 
 namespace WordPressKata
 {
     public static class LoginPage
     {
-        public static LoginCommand LoginAs(string admin)
+        public static void NavigateTo()
         {
-            throw new NotImplementedException();
+            var driver = new ChromeDriver();
+            driver.Navigate().GoToUrl("http://127.0.0.1:10080/wordpress/wp-login.php");
         }
 
-        public static void GoTo()
+        public static LoginCommand LoginAs(string username)
         {
-            throw new NotImplementedException();
+            return new LoginCommand(username);
         }
     }
 }
