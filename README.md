@@ -84,9 +84,9 @@ This Kata is an exploration of ideas, trying to reduce the unintentional complex
 
    ![08-find-and-type-password](screen-shots/08-find-and-type-password.png)
 
-   
+   ## Summary
 
-   
+   My honest opinion about Selenium is it is fundamentally flawed in that it is not part of the browser and the drivers are eternal. I find I get lots of inconsistencies, timeouts and discrepancies with different environments, not to mention the fact that my code suddenly becomes unreadable with waits and all sorts of horrible hacks. I find ***Cypress*** to be mroe impressive in this respect and the fact that it is coupled with the browser means you dont suffer from this external latency. However that is only supported by Chrome and if you have Multi browser testing requirments, this is not an option with Cypress, however, good luck with trying to get all these things to marry up. I think this is a very hacky setup and mainly a very frustrating experience. I think we need something mroe reliable. 
 
    
 
