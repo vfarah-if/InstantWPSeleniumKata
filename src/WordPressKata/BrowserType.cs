@@ -4,8 +4,6 @@
     {
         Chrome,
         Firefox,
-        PhantomJS,
-        InternetExplorer,
-        Safari
+        PhantomJS
     }
 }

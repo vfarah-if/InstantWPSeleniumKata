@@ -26,16 +26,6 @@ namespace WordPressKata
                     Instance = new PhantomJSDriver();
                     break;
                 }
-                case BrowserType.InternetExplorer:
-                {
-                    Instance = new InternetExplorerDriver();
-                    break;
-                }
-                case BrowserType.Safari:
-                {
-                    Instance = new SafariDriver();
-                    break;
-                }
                 default:
                 {
                     Instance = new ChromeDriver();

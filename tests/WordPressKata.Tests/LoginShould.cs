@@ -13,7 +13,6 @@ namespace WordPressKata.Tests
 #else
             Browser.Open(BrowserType.PhantomJS);
 #endif
-
         }
 
         [Fact]
