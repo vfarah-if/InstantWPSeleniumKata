@@ -13,7 +13,22 @@ namespace WordPressKata.Tests
 #else
             Browser.Open(BrowserType.PhantomJS);
 #endif
+            WarmupBrowser();
         }
+
+        [Fact]
+        public void NotAllowBadUserNameAndPasswordToLogin()
+        {
+            LoginPage.NavigateTo();
+
+            LoginPage
+                .LoginAs("invaliduser")
+                .WithPassword("badpassword")
+                .Login();
+
+            DashboardPage.IsCurrentPage.Should().BeFalse("Failed to not login");
+        }
+
 
         [Fact]
         public void AllowAnAdminToLogin()
@@ -25,12 +40,17 @@ namespace WordPressKata.Tests
                 .WithPassword("password")
                 .Login();
 
-            DashboardPage.IsCurrentPage.Should().BeTrue();
+            DashboardPage.IsCurrentPage.Should().BeTrue("Failed to login");
         }
 
         public void Dispose()
         {            
             Browser.Quit();
+        }
+
+        private static void WarmupBrowser()
+        {
+            LoginPage.NavigateTo();
         }
     }
 }

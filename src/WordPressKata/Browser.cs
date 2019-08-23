@@ -2,9 +2,8 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.IE;
 using OpenQA.Selenium.PhantomJS;
-using OpenQA.Selenium.Safari;
+using Selenium.WebDriver.WaitExtensions;
 
 namespace WordPressKata
 {
@@ -31,6 +30,20 @@ namespace WordPressKata
                     Instance = new ChromeDriver();
                     break;
                 }
+            }
+            Instance.Manage().Window.Maximize();
+            Wait(1000, By.Id("user_login"));
+        }
+
+        public static void Wait(int milliseconds = 500, By by = null)
+        {
+            if (by == null)
+            {
+                Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromMilliseconds(milliseconds));
+            }
+            else
+            {
+                Instance.Wait(milliseconds).ForElement(by);
             }
         }
 
