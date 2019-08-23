@@ -1,14 +1,14 @@
 # Instant Word Press Selenium Kata
-Test exploration with my friend *Vikas*. Its always a pleasure working with people who have a passion to learn and a desire to make the world a better place. automating his testing and desire to learn and better his skills. Vicas, single handily took on the task himself to automate a bunch of selenium tests, and without any dev experience, put together some impressive test journeys helping maintain the integrity of an ever changing project.
+Test exploration with my friend *Vikas*. Its always a pleasure working with people who have a passion to learn and a desire to make the world a better place. Vicas had a desire of automating his manual testing and to learn and better his skills. Vicas, single handily took on the task himself to automate a bunch of selenium tests in the current company I am working in, and without any dev experience, put together some impressive test journeys helping maintain the integrity of an ever changing project.
 
-In his original attempt, he tended to make common mistakes newbies make when attempting to create their first stab at the world and then to have ideas influenced by developers.
+In his original attempt, he tended to make common mistakes newbies make when attempting to create their first stab at the dev test world and then to have ideas influenced by complicated developers.
 
-This Kata is an exploration of ideas, trying to reduce the unintentional complexity developers usually bring to non-developers world but still honouring TDD and the core ideas of testing and building your code up in small iterations.
+This Kata is an exploration of ideas, trying to reduce the unintentional complexity developers bring to non-developers but still honouring TDD concepts and the core ideas of testing and building your code up in small iterations.
 
 ## Setup windows environment
 1. Download https://windowsreport.com/install-wordpress-windows-10/ ready to selenium test this.
-2. **XUnit** is the testing framework I used. This is simple, less verbose and is in my opinion the best test framework to use with .net. Here is a cheat-sheet to help you with a quick reference - https://www.planetgeek.ch/wp-content/uploads/2011/12/xUnitCheatSheet1.pdf.
-3. Install fluent assertions so that test logic reads like English.
+2. **XUnit** is the testing framework I used. This is simple test framework, less ceremony and is in my opinion the best test framework to use with .net. Here is a cheat-sheet to help you with a quick reference - https://www.planetgeek.ch/wp-content/uploads/2011/12/xUnitCheatSheet1.pdf.
+3. Install fluent assertions so that test logic reads like English making it easier to develop.
 
 ## Theory behind what you will develop
 - This course is for Developers or QA
@@ -52,4 +52,6 @@ This Kata is an exploration of ideas, trying to reduce the unintentional complex
 
 ## Test Strategy
 
-...
+1. Start with your first simple test to generate the code
+
+   

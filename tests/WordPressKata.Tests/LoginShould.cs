@@ -9,7 +9,7 @@ namespace WordPressKata.Tests
         [Fact]
         public void AllowAnAdminToLogin()
         {
-            LoginPage.Navigate();
+            LoginPage.GoTo();
 
             LoginPage
                 .LoginAs("admin")

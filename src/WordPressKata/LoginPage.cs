@@ -4,12 +4,12 @@ namespace WordPressKata
 {
     public static class LoginPage
     {
-        public static void Navigate()
+        public static LoginCommand LoginAs(string admin)
         {
             throw new NotImplementedException();
         }
 
-        public static LoginCommand LoginAs(string admin)
+        public static void GoTo()
         {
             throw new NotImplementedException();
         }
