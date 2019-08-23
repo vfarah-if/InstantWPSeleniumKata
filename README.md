@@ -86,7 +86,7 @@ This Kata is an exploration of ideas, trying to reduce the unintentional complex
 
    ## Summary
 
-   My honest opinion about Selenium is it is fundamentally flawed in that it is not part of the browser and the drivers are eternal. I find I get lots of inconsistencies, timeouts and discrepancies with different environments, not to mention the fact that my code suddenly becomes unreadable with waits and all sorts of horrible hacks. I find ***Cypress*** to be mroe impressive in this respect and the fact that it is coupled with the browser means you dont suffer from this external latency. However that is only supported by Chrome and if you have Multi browser testing requirments, this is not an option with Cypress, however, good luck with trying to get all these things to marry up. I think this is a very hacky setup and mainly a very frustrating experience. I think we need something mroe reliable. 
+   My honest opinion about Selenium is it is fundamentally flawed in that it is not part of the browser and the drivers are external. I find I get lots of inconsistencies, timeouts and discrepancies with different environments, not to mention the fact that my code suddenly becomes unreadable with waits and all sorts of horrible hacks. I find ***Cypress*** to be more impressive in this respect and the fact that it is coupled with the browser, meaning you don't suffer from this external latency and the need for hacks. However that is only supported with Chrome, and if you have Multi browser testing requirements, this is not an option with Cypress, however, good luck with trying to get all these things to work with different browsers or working with the latets browser. I think this is a very hacky setup and mainly a very frustrating experience.  
 
    
 
