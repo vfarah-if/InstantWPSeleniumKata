@@ -22,25 +22,42 @@ namespace WordPressKata
 
         public void Login()
         {
-            var byUserLogin = By.Id("user_login");
-            Browser.Instance.FindElement(byUserLogin).Click();
-            Browser.Instance.FindElement(byUserLogin).SendKeys(_username);
+            FindAndTypeUsername();
+            FindAndTypePassword();
+            FindAndClickRememberMe();
+            FindAndClickLoginButton();
+            // Wait for the login to occur
+            Browser.Wait(by: By.CssSelector("div.wrap > h1"));
+        }
 
-            var byPassword = By.Id("user_pass");
-            Browser.Instance.FindElement(byPassword).Click();
-            Browser.Instance.FindElement(byPassword).SendKeys(_password);
+        private static void FindAndClickLoginButton()
+        {
+            var loginButton = Browser.Instance.FindElement(By.Id("wp-submit"));
+            loginButton.Click();
+        }
 
+        private void FindAndClickRememberMe()
+        {
             var byRememberMe = By.Id("rememberme");
             var rememberMeInput = Browser.Instance.FindElement(byRememberMe);
             if (_rememberMe)
             {
                 rememberMeInput?.Click();
             }
+        }
 
-            var loginButton = Browser.Instance.FindElement(By.Id("wp-submit"));
-            loginButton.Click();
-            // Wait for the login to occur
-            Browser.Wait(by: By.CssSelector("div.wrap > h1"));
+        private void FindAndTypePassword()
+        {
+            var byPassword = By.Id("user_pass");
+            Browser.Instance.FindElement(byPassword).Click();
+            Browser.Instance.FindElement(byPassword).SendKeys(_password);
+        }
+
+        private void FindAndTypeUsername()
+        {
+            var byUserLogin = By.Id("user_login");
+            Browser.Instance.FindElement(byUserLogin).Click();
+            Browser.Instance.FindElement(byUserLogin).SendKeys(_username);
         }
     }
 }

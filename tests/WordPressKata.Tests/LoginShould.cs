@@ -1,6 +1,7 @@
 ﻿using System;
 using Xunit;
 using FluentAssertions;
+using static WordPressKata.BrowserType;
 
 namespace WordPressKata.Tests
 {
@@ -11,7 +12,7 @@ namespace WordPressKata.Tests
 #if DEBUG
             Browser.Open();
 #else
-            Browser.Open(BrowserType.PhantomJS);
+            Browser.Open(PhantomJS);
 #endif
             WarmupBrowser();
         }
