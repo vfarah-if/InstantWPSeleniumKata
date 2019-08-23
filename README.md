@@ -76,7 +76,17 @@ This Kata is an exploration of ideas, trying to reduce the unintentional complex
 
    ![06-open-and-quit-browser](screen-shots/06-open-and-quit-browser.png)
 
-7. Implement the actual login logic ...
+7. Implement the actual login logic
+
+   ![07-login-details](screen-shots/07-login-details.png)
+
+8. Need to click in each UI element before typing text inorder to get a "reliable" experience, but I find this was not too reliable at the best of time
+
+   ![08-find-and-type-password](screen-shots/08-find-and-type-password.png)
+
+   
+
+   
 
    
 
