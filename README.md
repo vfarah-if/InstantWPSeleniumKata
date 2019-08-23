@@ -43,7 +43,7 @@ This Kata is an exploration of ideas, trying to reduce the unintentional complex
     directly
   - Reduce the number of **parameters** for API Calls when possible
   - Always use **default values** instead, requiring parameters where possible
-- **Static Methods** are favoured, shock!, because we are making it easier to use and so this is a simple way to make it more user friendly. Developers will be disagreeing with this point, as I did when I first looked at this, but that is our notion of correctness kicking in. This is about simplifying the test structure to make it easy to use for Non-developers so keep that in mind and this point is easy to diggest
+- **Static Methods** are favoured, shock!, because we are making it easier to use and so this is a simple way to make it more user friendly. Developers will be disagreeing with this point, as I did when I first looked at this, but that is our notion of correctness kicking in. This is about simplifying the test structure to make it easy to use for Non-developers so keep that in mind and this point is easy to digest
 - **Domain Specific Language (DSL)** needs to be used to expose for test usage
   - **Internal DSL**, using the programming language specific to domain
   - **External DSL** creates an entire language to write your tests in but is a lot of work
