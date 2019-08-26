@@ -17,5 +17,10 @@ namespace WordPressKata
         {
             return new LoginCommand(username);
         }
+
+        public static void LoginAsAdministrator()
+        {
+            new LoginCommand("administrator").WithPassword("password").Login();
+        }
     }
 }

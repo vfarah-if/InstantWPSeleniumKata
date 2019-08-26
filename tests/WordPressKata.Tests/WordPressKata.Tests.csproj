@@ -71,6 +71,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PostShould.cs" />
     <Compile Include="LoginShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
