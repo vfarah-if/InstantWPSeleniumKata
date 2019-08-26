@@ -1,5 +1,6 @@
 ﻿using System;
 using OpenQA.Selenium;
+using Selenium.WebDriver.WaitExtensions;
 
 namespace WordPressKata
 {
@@ -27,7 +28,10 @@ namespace WordPressKata
             FindAndClickRememberMe();
             FindAndClickLoginButton();
             // Wait for the login to occur
-            Browser.Wait(by: By.CssSelector("div.wrap > h1"));
+            Browser
+                .Instance
+                .Wait()
+                .ForElement(by: By.CssSelector("div.wrap > h1"));
         }
 
         private static void FindAndClickLoginButton()

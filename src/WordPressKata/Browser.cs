@@ -32,19 +32,7 @@ namespace WordPressKata
                 }
             }
             Instance.Manage().Window.Maximize();
-            Wait(1000, By.Id("user_login"));
-        }
-
-        public static void Wait(int milliseconds = 500, By by = null)
-        {
-            if (by == null)
-            {
-                Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromMilliseconds(milliseconds));
-            }
-            else
-            {
-                Instance.Wait(milliseconds).ForElement(by);
-            }
+            Instance.Wait(1000).ForElement(By.Id("user_login"));
         }
 
         public static void Quit()
