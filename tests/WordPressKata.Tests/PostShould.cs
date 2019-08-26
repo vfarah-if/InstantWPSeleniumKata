@@ -15,7 +15,6 @@ namespace WordPressKata.Tests
             Browser.Open(PhantomJS);
 #endif
             LoginPage.NavigateTo();
-            LoginPage.NavigateTo();
             LoginPage.LoginAsAdministrator();
         }
 
@@ -28,8 +27,8 @@ namespace WordPressKata.Tests
             NewPostPage
                 .CreatePost(expectedPostTitle)
                 .WithBody("This is the body")
-                .Create();
-            NewPostPage.GoToNewPost();
+                .Publish();
+            NewPostPage.NavigateToNewPost();
 
             PostPage.Title.Should().Be(expectedPostTitle);
         }
@@ -37,7 +36,7 @@ namespace WordPressKata.Tests
 
         public void Dispose()
         {            
-            Browser.Quit();
+            //Browser.Quit();
         }
 
     }

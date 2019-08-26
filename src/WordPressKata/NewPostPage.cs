@@ -1,33 +1,55 @@
-﻿namespace WordPressKata
+﻿using OpenQA.Selenium;
+using Selenium.WebDriver.WaitExtensions;
+
+namespace WordPressKata
 {
     public class NewPostPage
     {
         public static CreatePostCommand CreatePost(string expectedPostTitle)
         {
-            throw new System.NotImplementedException();
+            return new CreatePostCommand(expectedPostTitle);
         }
 
-        public static void GoToNewPost()
+        public static void NavigateToNewPost()
         {
-            throw new System.NotImplementedException();
+            Browser
+                .Instance
+                .Wait()
+                .ForElement(by: By.Id("message"));
+
+            Browser.
+                Instance.
+                FindElement(By.Id("message")).
+                FindElements(By.TagName("a"))[0].Click();
         }
 
         public static void NavigateTo()
         {
-            throw new System.NotImplementedException();
-        }
-    }
+            // VVF: Not working
+            //            Browser.
+            //                Instance.
+            //                Wait().
+            //                ForElement(By.Id("menu-posts")).
+            //                ToExist().
+            //                Click();
 
-    public class CreatePostCommand
-    {
-        public CreatePostCommand WithBody(string thisIsTheBody)
-        {
-            throw new System.NotImplementedException();
-        }
+            Browser.
+                Instance.
+                FindElement(By.Id("menu-posts")).
+                Click();
 
-        public void Create()
-        {
-            throw new System.NotImplementedException();
+            // VVF: Not working
+            //            Browser.
+            //                Instance.
+            //                Wait().
+            //                ForElement(By.LinkText("Add New")).
+            //                ToExist().
+            //                Click();
+
+            Browser.
+                Instance.
+                FindElement(By.LinkText("Add New")).
+                Click();
         }
     }
 }
