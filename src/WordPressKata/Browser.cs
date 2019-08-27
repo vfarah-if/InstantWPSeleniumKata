@@ -35,16 +35,10 @@ namespace WordPressKata
             Instance.Wait(1000).ForElement(By.Id("user_login"));
         }
 
-        // VVF: Investigate why this would not work
-//        public static IWebElement FindElement(this IWebDriver driver, By by, int timeoutInSeconds)
-//        {
-//            if (timeoutInSeconds > 0)
-//            {
-//               var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
-//               return wait.Until(drv => drv.FindElement(by));
-//            }
-//            return driver.FindElement(by);
-//        }
+        public static void ImplicitlyWait(TimeSpan timeSpan)
+        {
+            Instance.Manage().Timeouts().ImplicitlyWait(timeSpan);
+        }
 
         public static void Quit()
         {

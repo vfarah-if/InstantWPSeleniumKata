@@ -1,21 +1,17 @@
 ﻿using System;
 using Xunit;
 using FluentAssertions;
-using static WordPressKata.BrowserType;
+using WordPressKata.Posts;
 
 namespace WordPressKata.Tests
 {
-    public class PostShould : IDisposable
+    public class PostShould : TestBase
     {
-        public PostShould()
+        // HACK: In order to prevent the browser quiting before the element is found
+        public override void Dispose()
         {
-#if DEBUG
-            Browser.Open();
-#else
-            Browser.Open(PhantomJS);
-#endif
-            LoginPage.NavigateTo();
-            LoginPage.LoginAsAdministrator();
+            Browser.ImplicitlyWait(TimeSpan.FromSeconds(1));
+            base.Dispose();
         }
 
         [Fact]
@@ -29,15 +25,7 @@ namespace WordPressKata.Tests
                 .WithBody("This is the body")
                 .Publish();
             NewPostPage.NavigateToNewPost();
-
             PostPage.Title.Should().Be(expectedPostTitle);
         }
-
-
-        public void Dispose()
-        {            
-            //Browser.Quit();
-        }
-
     }
 }

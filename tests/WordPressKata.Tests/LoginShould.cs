@@ -1,19 +1,15 @@
 ﻿using System;
 using Xunit;
 using FluentAssertions;
-using static WordPressKata.BrowserType;
+using WordPressKata.Login;
+
 
 namespace WordPressKata.Tests
 {
-    public class LoginShould : IDisposable
+    public class LoginShould : TestBase
     {
-        public LoginShould()
+        public LoginShould(): base(false)
         {
-#if DEBUG
-            Browser.Open();
-#else
-            Browser.Open(PhantomJS);
-#endif
             WarmupBrowser();
         }
 
@@ -27,6 +23,7 @@ namespace WordPressKata.Tests
                 .WithPassword("badpassword")
                 .Login();
 
+            LoginPage.VerifyLoginFailed();
             DashboardPage.IsCurrentPage.Should().BeFalse("Failed to not login");
         }
 
@@ -41,12 +38,8 @@ namespace WordPressKata.Tests
                 .WithPassword("password")
                 .Login();
 
+            LoginPage.VerifyLoginSucceeded();
             DashboardPage.IsCurrentPage.Should().BeTrue("Failed to login");
-        }
-
-        public void Dispose()
-        {            
-            Browser.Quit();
         }
 
         private static void WarmupBrowser()
