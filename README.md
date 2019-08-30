@@ -80,7 +80,7 @@ This Kata is an exploration of ideas, trying to reduce the unintentional complex
 
    ![07-login-details](screen-shots/07-login-details.png)
 
-8. Need to click in each UI element before typing text inorder to get a "reliable" experience, but I find this was not too reliable at the best of time
+8. ![]()Need to click in each UI element before typing text in order to get a "reliable" experience, but I find this was not too reliable at the best of time
 
    ![08-find-and-type-password](screen-shots/08-find-and-type-password.png)
 
@@ -88,10 +88,30 @@ This Kata is an exploration of ideas, trying to reduce the unintentional complex
 
 9. Solved the wait issue by referencing an old version of the support library, so the extensions are finally working as they should have, hacky but doable. So make sure the *Selenium.Support* is always at 2.53.0 and 1.0 of the *Selenium.WebDriver.WaitExtension*  and there should be an issue raised for this.
 
-   ## Summary
+   ## BDDfy your tests
 
-   My honest opinion about Selenium is it is fundamentally flawed in that it is not part of the browser and the drivers are external. I find I get lots of inconsistencies, timeouts and discrepancies with different environments, not to mention the fact that my code suddenly becomes unreadable with waits and all sorts of horrible hacks. I find ***Cypress*** to be more impressive in this respect and the fact that it is coupled with the browser, meaning you don't suffer from this external latency and the need for hacks. However that is only supported with Chrome, and if you have Multi browser testing requirements, this is not an option with Cypress, however, good luck with trying to get all these things to work with different browsers or working with the latest of each browser as there seems to be a lag with fixing the drivers to work on the latest. I think this is a very hacky setup and mainly a very frustrating experience.  
+   I have managed to work in several environments where developers where using *specflow* and *selenium*, angry with specflow and selenium creating complexities for non-technical developers, or technical developers not taking the time to learn specflow and being tethered to a DSL to generate code logic. The end result is people abandon the tests or stop adding to and fixing things. I think in all honesty, use what you and your team is comfortable with and know your technical limits, however I am a massive fan of keeping things simple for all range of technical skills and so I am going to introduce you to [bddyfy fluent api](https://teststackbddfy.readthedocs.io/en/latest/Usage/FluentApiInputParameters/). 
 
+   1. Define the story
+
+      ![09-bddfy-story](screen-shots/09-bddfy-story.png)
    
-
+   2. Utilising the *Given When Then And*  fluent structure generate the steps in empty methods to represent the steps that would b needed to verify the tests
+   
+      ![10-bddfy-test](screen-shots/10-bddfy-test.png)
+   
+   3. The empty methods that are generated should utilise the *LoginPage* automation logic to fulfill the tests
+   
+      ![11-bddfy-method-implementation](C:\Dev\InstantWPSeleniumKata\screen-shots\11-bddfy-method-implementation.png)
+   
+   4. Generate reports using https://teststackbddfy.readthedocs.io/en/latest/Usage/Reports/
+   
+      ![12-bddfy-console-results](C:\Dev\InstantWPSeleniumKata\screen-shots\12-bddfy-console-results.png)
+   
+   ## Summary
+   
+   My honest opinion about Selenium is it is fundamentally flawed in that it is not part of the browser and the drivers are external. I find I get lots of inconsistencies, timeouts and discrepancies with different environments, not to mention the fact that my code suddenly becomes unreadable with waits and all sorts of horrible hacks. I find ***Cypress*** to be more impressive in this respect and the fact that it is coupled with the browser, meaning you don't suffer from this external latency and the need for hacks. However that is only supported with Chrome, and if you have Multi browser testing requirements, this is not an option with Cypress, however, good luck with trying to get all these things to work with different browsers or working with the latest of each browser as there seems to be a lag with fixing the drivers to work on the latest. I think this is a very hacky setup and mainly a very frustrating experience.  
+   
+   
+   
    
