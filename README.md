@@ -102,11 +102,11 @@ This Kata is an exploration of ideas, trying to reduce the unintentional complex
    
    3. The empty methods that are generated should utilise the *LoginPage* automation logic to fulfill the tests
    
-      ![11-bddfy-method-implementation](C:\Dev\InstantWPSeleniumKata\screen-shots\11-bddfy-method-implementation.png)
+      ![11-bddfy-method-implementation](screen-shots/11-bddfy-method-implementation.png)
    
    4. Generate reports using https://teststackbddfy.readthedocs.io/en/latest/Usage/Reports/
    
-      ![12-bddfy-console-results](C:\Dev\InstantWPSeleniumKata\screen-shots\12-bddfy-console-results.png)
+      ![12-bddfy-console-results](screen-shots/12-bddfy-console-results.png)
    
    ## Summary
    
