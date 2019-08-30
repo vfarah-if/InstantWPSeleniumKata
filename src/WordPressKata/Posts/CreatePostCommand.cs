@@ -22,14 +22,40 @@ namespace WordPressKata.Posts
 
         public void Publish()
         {
-            Browser.Instance.FindElement(By.Id("title")).Click();
-            Browser.Instance.FindElement(By.Id("title")).SendKeys(_title);
+            FindAndTypeTitleText();
 
+            FindAndTypeBodyTextIntoFrame();
+
+            FindAndClickOnPublishButton();
+        }
+
+        private static void FindAndClickOnPublishButton()
+        {
+                WaitForBodyToBeReady();
+                Browser.Instance.Wait().ForElement(By.Id("publish")).ToExist().Click();
+                WaitForAnimationToFinish();
+        }
+
+        private static void WaitForAnimationToFinish()
+        {
+            Browser.PauseFor(TimeSpan.FromSeconds(2));
+        }
+
+        private static void WaitForBodyToBeReady()
+        {
+            Browser.PauseFor(TimeSpan.FromSeconds(2));
+        }
+
+        private void FindAndTypeBodyTextIntoFrame()
+        {
             Browser.Instance.SwitchTo().Frame("content_ifr");
             Browser.Instance.SwitchTo().ActiveElement().SendKeys(_body);
             Browser.Instance.SwitchTo().DefaultContent();
+        }
 
-            Browser.Instance.Wait().ForElement(By.Id("publish")).ToExist().Click();
+        private void FindAndTypeTitleText()
+        {
+            Browser.Instance.TypeText(By.Id("title"), _title);
         }
     }
 }

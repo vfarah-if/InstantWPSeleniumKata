@@ -1,5 +1,6 @@
 ﻿using System;
 using OpenQA.Selenium;
+using Selenium.WebDriver.WaitExtensions;
 
 namespace WordPressKata.Login
 {
@@ -30,32 +31,25 @@ namespace WordPressKata.Login
 
         private static void FindAndClickLoginButton()
         {
-            var loginButton = Browser.Instance.FindElement(By.Id("wp-submit"));
-            loginButton.Click();
+            Browser.Instance.Wait().ForElement(By.Id("wp-submit")).ToExist().Click();
         }
 
         private void FindAndClickRememberMe()
         {
+            if (!_rememberMe) return;
             var byRememberMe = By.Id("rememberme");
             var rememberMeInput = Browser.Instance.FindElement(byRememberMe);
-            if (_rememberMe)
-            {
-                rememberMeInput?.Click();
-            }
+            rememberMeInput?.Click();
         }
 
         private void FindAndTypePassword()
         {
-            var byPassword = By.Id("user_pass");
-            Browser.Instance.FindElement(byPassword).Click();
-            Browser.Instance.FindElement(byPassword).SendKeys(_password);
+            Browser.Instance.TypeText(By.Id("user_pass"), _password);
         }
 
         private void FindAndTypeUsername()
         {
-            var byUserLogin = By.Id("user_login");
-            Browser.Instance.FindElement(byUserLogin).Click();
-            Browser.Instance.FindElement(byUserLogin).SendKeys(_username);
+            Browser.Instance.TypeText(By.Id("user_login"), _username);
         }
     }
 }

@@ -4,7 +4,7 @@ using FluentAssertions;
 using WordPressKata.Login;
 
 
-namespace WordPressKata.Tests
+namespace WordPressKata.Tests.Login
 {
     public class LoginShould : TestBase
     {

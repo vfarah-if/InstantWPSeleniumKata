@@ -1,19 +1,11 @@
-﻿using System;
-using Xunit;
+﻿using Xunit;
 using FluentAssertions;
 using WordPressKata.Posts;
 
-namespace WordPressKata.Tests
+namespace WordPressKata.Tests.Posts
 {
     public class PostShould : TestBase
     {
-        // HACK: In order to prevent the browser quiting before the element is found
-        public override void Dispose()
-        {
-            Browser.ImplicitlyWait(TimeSpan.FromSeconds(1));
-            base.Dispose();
-        }
-
         [Fact]
         public void CreateANewPost()
         {

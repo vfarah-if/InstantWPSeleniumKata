@@ -32,12 +32,28 @@ namespace WordPressKata
                 }
             }
             Instance.Manage().Window.Maximize();
-            Instance.Wait(1000).ForElement(By.Id("user_login"));
         }
 
-        public static void ImplicitlyWait(TimeSpan timeSpan)
+        public static void PauseFor(TimeSpan timeSpan)
         {
             Instance.Manage().Timeouts().ImplicitlyWait(timeSpan);
+        }
+
+        public static void TypeText(this IWebDriver source, By by, string text, int waitInMilliseconds = 500)
+        {
+            if (source != null && by != null)
+            {
+                try
+                {
+                    source.Wait(waitInMilliseconds).ForElement(by).ToExist().Click();
+                    source.Wait(waitInMilliseconds).ForElement(by).ToExist().SendKeys(text);
+                }
+                catch (StaleElementReferenceException)
+                {
+                    source.Wait(waitInMilliseconds).ForElement(by).ToExist().Click();
+                    source.Wait(waitInMilliseconds).ForElement(by).ToExist().SendKeys(text);
+                }
+            }
         }
 
         public static void Quit()
