@@ -1,5 +1,5 @@
 # Instant Word Press Selenium Kata
-Test exploration with my friend *Vikas*. Its always a pleasure working with people who have a passion to learn and a desire to make the world a better place. *Vikas* had a desire of automating his manual testing and to learn and better his skills. Vikas, single handily took on the task himself to automate a bunch of selenium tests in the current company I am working in, and without any dev experience, put together some impressive test journeys helping maintain the integrity of an ever changing project.
+Test exploration with my friend *Rutvik*. Its always a pleasure working with people who have a passion to learn and a desire to make the world a better place. *Rutvik* had a desire of automating his manual testing and to learn and better his skills. Rutvik, single handily took on the task himself to automate a bunch of selenium tests in the current company I am working in, and without any dev experience, put together some impressive test journeys helping maintain the integrity of an ever changing project.
 
 In his original attempt, he tended to make common mistakes newbies make when attempting to create their first stab at the dev test world and then to have ideas influenced by complicated developers.
 
