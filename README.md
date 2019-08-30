@@ -90,7 +90,7 @@ This Kata is an exploration of ideas, trying to reduce the unintentional complex
 
    ## BDDfy your tests
 
-   I have managed to work in several environments where developers where using *specflow* and *selenium*, angry with specflow and selenium creating complexities for non-technical developers, or technical developers not taking the time to learn specflow and being tethered to a DSL to generate code logic. The end result is people abandon the tests or stop adding to and fixing things. I think in all honesty, use what you and your team is comfortable with and know your technical limits, however I am a massive fan of keeping things simple for all range of technical skills and so I am going to introduce you to [bddyfy fluent api](https://teststackbddfy.readthedocs.io/en/latest/Usage/FluentApiInputParameters/). 
+   I have managed to work in several environments where developers where using *specflow* and *selenium*, angry with specflow and selenium creating complexities for non-technical developers, or technical developers not taking the time to learn specflow and being tethered to a DSL to generate code logic. The end result is people abandon the tests or stop adding to and fixing things. I think in all honesty, use what you and your team is comfortable with and know your technical limits, however I am a massive fan of keeping things simple for all range of technical skills and so I am going to introduce you to [bddfy fluent api](https://teststackbddfy.readthedocs.io/en/latest/Usage/FluentApiInputParameters/). 
 
    1. Define the story
 
